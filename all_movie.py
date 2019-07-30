@@ -1,7 +1,7 @@
 import numpy as np
 import pdb
 import pickle
-with open('all_movie.csv', "r") as lst:
+with open('all_movie_modify.csv', "r") as lst:
 #with open('filmtv_movies - ENG.csv', "r") as lst:
     file = lst.readlines()
 cast = []
@@ -22,6 +22,6 @@ for i in range(len(cast)-1):
                 if(cast[i][m]==cast[j][n]):
                     edges.append(np.array([i+2,j+2]))
 edges = np.asarray(edges)
-output = open('edges_all_movie.pkl', 'wb')
+output = open('edges_all_movie_modify.pkl', 'wb')
 pickle.dump(edges, output)
 output.close()
